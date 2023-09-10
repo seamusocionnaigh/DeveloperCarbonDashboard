@@ -1,1 +1,8 @@
-# DeveloperCarbonDashboard
+# The Developer Carbon Dashboard
+
+This dashboard uses Event Monitoring and CRM Analytics to illustrate the estimated carbon emissions associated with an org’s usage of Salesforce App Server CPU time via specific features and products. The dashboard does not calculate the entire carbon emissions footprint of an org. The carbon emission coefficient for a given instance is subject to change based on several factors including the carbon intensity of the electrical grid the instance relies on and the App Server SKUs serving that instance.
+Information in this dashboard on carbon emissions is intended for informational purposes and should not be used in regulatory or financial statements. Salesforce is a Net Zero Company that seeks to reduce carbon emissions and, when needed, purchases carbon offsets. Learn more about Salesforce’s commitment to Sustainability [here](https://www.salesforce.com/company/sustainability/)
+
+## Methodology:
+Carbon per mms of Core App Server time is derived from a PUE-adjusted carbon coefficient per data center for both AWS and Salesforce first party data centers. This figure is calculated as the emissions factor in grams per megawatt hour multiplied by the PUE per datacenter. The PUE-adjusted carbon coefficient is then scaled against each App Server SKU types’ daily megawatt hour and divided by the available processing seconds, in millions, for that specific App Server SKU to get to the estimated carbon per million milliseconds of compute time.
+These per-SKU, per-data center carbon coefficients are then combined with data on the App Server SKU types that serve each Salesforce instance to produce a single carbon coefficient per instance. Data on the App Server SKU types comprising Salesforce instances are current as of current as of June 2023.
