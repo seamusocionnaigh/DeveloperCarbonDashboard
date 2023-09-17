@@ -3688,7 +3688,7 @@
                 "all"
               ],
               "joins" : [ ],
-              "name" : "${App.Datasets.ReportWithUsers.FullyQualifiedName}"
+              "name" : "${Apps.AdminAnalytics.Datasets.ReportWithUsers.Name}"
             },
             {
               "columns" : [
@@ -3713,7 +3713,7 @@
                 "all"
               ],
               "joins" : [ ],
-              "name" : "${App.Datasets.ReportWithUsers.FullyQualifiedName}"
+              "name" : "${Apps.AdminAnalytics.Datasets.ReportWithUsers.Name}"
             },
             {
               "columns" : [
@@ -3738,7 +3738,7 @@
                 "all"
               ],
               "joins" : [ ],
-              "name" : "${App.Datasets.ReportWithUsers.FullyQualifiedName}"
+              "name" : "${Apps.AdminAnalytics.Datasets.ReportWithUsers.Name}"
             },
             {
               "columns" : [
@@ -4151,7 +4151,7 @@
           ],
           "rowTotals" : [ ],
           "sourceFilters" : {
-            "${App.Datasets.ReportWithUsers.FullyQualifiedName}" : {
+            "${Apps.AdminAnalytics.Datasets.ReportWithUsers.Name}" : {
               "filters" : [
                 [
                   "RUN_TIME",
@@ -4190,7 +4190,7 @@
               "filters" : [ ],
               "groups" : [ ],
               "joins" : [ ],
-              "name" : "${App.Datasets.ReportWithUsers.FullyQualifiedName}"
+              "name" : "${Apps.AdminAnalytics.Datasets.ReportWithUsers.Name}"
             }
           ]
         },

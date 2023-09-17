@@ -22,7 +22,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "URIWithUsers",
-            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+            "name" : "URIWithUsers"
           },
           "sampleDetails" : {
             "type" : "TopN",
@@ -44,7 +44,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "ReportWithUsers",
-            "name" : "${App.Datasets.ReportWithUsers.FullyQualifiedName}"
+            "name" : "ReportWithUsers"
           },
           "sampleDetails" : {
             "type" : "TopN",
@@ -69,7 +69,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "DashboardWithUsers",
-            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+            "name" : "DashboardWithUsers"
           },
           "sampleDetails" : {
             "type" : "TopN",
@@ -93,7 +93,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "BulkApiWithUsers",
-            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+            "name" : "BulkApiWithUsers"
           },
           "sampleDetails" : {
             "type" : "TopN",
@@ -117,7 +117,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "APIWithUsers",
-            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+            "name" : "APIWithUsers"
           },
           "sampleDetails" : {
             "type" : "TopN",
@@ -138,7 +138,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "ApexUnexpectedExceptionStageCopy",
-            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+            "name" : "ApexUnexpectedExceptionStageCopy"
           },
           "sampleDetails" : {
             "type" : "TopN",
@@ -161,7 +161,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "ApexTriggerWithUsers",
-            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+            "name" : "ApexTriggerWithUsers"
           },
           "sampleDetails" : {
             "type" : "TopN",
@@ -186,7 +186,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "ApexSoapWithUsers",
-            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+            "name" : "ApexSoapWithUsers"
           },
           "sampleDetails" : {
             "type" : "TopN",
@@ -211,7 +211,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "ApexRestApiWithUsers",
-            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+            "name" : "ApexRestApiWithUsers"
           },
           "sampleDetails" : {
             "type" : "TopN",
@@ -235,7 +235,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "ApexExecutionWithUsers",
-            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+            "name" : "ApexExecutionWithUsers"
           },
           "sampleDetails" : {
             "type" : "TopN",
@@ -259,7 +259,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "RestApiWithUsers",
-            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+            "name" : "RestApiWithUsers"
           },
           "sampleDetails" : {
             "type" : "TopN",
@@ -1444,7 +1444,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "VisualforceRequestWithUsers",
-            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+            "name" : "VisualforceRequestWithUsers"
           },
           "sampleDetails" : {
             "type" : "TopN",

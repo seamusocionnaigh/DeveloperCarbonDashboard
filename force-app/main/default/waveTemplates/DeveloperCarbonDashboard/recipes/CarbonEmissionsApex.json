@@ -26,7 +26,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "ApexUnexpectedExceptionStageCopy",
-            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+            "name" : "ApexUnexpectedExceptionStageCopy"
           },
           "sampleDetails" : {
             "type" : "TopN"
@@ -79,7 +79,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "ApexExecutionWithUsers",
-            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+            "name" : "ApexExecutionWithUsers"
           },
           "sampleDetails" : {
             "type" : "TopN",
@@ -265,7 +265,7 @@
           "dataset" : {
             "type" : "analyticsDataset",
             "label" : "ApexTriggerWithUsers",
-            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+            "name" : "ApexTriggerWithUsers"
           },
           "sampleDetails" : {
             "type" : "TopN",
