@@ -1,0 +1,3060 @@
+{
+  "name" : "Carbon_Emissions",
+  "label" : "Carbon Emissions",
+  "scheduleExpression" : null,
+  "publishingTarget" : null,
+  "format" : "R3",
+  "scheduleType" : null,
+  "recipeDefinition" : {
+    "version" : "58.0",
+    "nodes" : {
+      "LOAD_DATASET0" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "EVENT_TYPE",
+            "URI",
+            "TIMESTAMP_DERIVED",
+            "RUN_TIME",
+            "ORGANIZATION_ID"
+          ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "URIWithUsers",
+            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+          },
+          "sampleDetails" : {
+            "type" : "TopN",
+            "sortBy" : [ ]
+          }
+        }
+      },
+      "LOAD_DATASET1" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "EVENT_TYPE",
+            "ORGANIZATION_ID",
+            "TIMESTAMP_DERIVED",
+            "RUN_TIME",
+            "Report.Name"
+          ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "ReportWithUsers",
+            "name" : "${App.Datasets.ReportWithUsers.FullyQualifiedName}"
+          },
+          "sampleDetails" : {
+            "type" : "TopN",
+            "filters" : {
+              "filterExpressions" : [ ]
+            },
+            "sortBy" : [ ]
+          }
+        }
+      },
+      "LOAD_DATASET2" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "EVENT_TYPE",
+            "Dashboard.Title",
+            "TIMESTAMP_DERIVED",
+            "RUN_TIME",
+            "ORGANIZATION_ID"
+          ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "DashboardWithUsers",
+            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+          },
+          "sampleDetails" : {
+            "type" : "TopN",
+            "sortBy" : [ ]
+          }
+        }
+      },
+      "LOAD_DATASET3" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "EVENT_TYPE",
+            "URI",
+            "OPERATION_TYPE",
+            "ENTITY_TYPE",
+            "TIMESTAMP_DERIVED",
+            "RUN_TIME",
+            "ORGANIZATION_ID"
+          ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "BulkApiWithUsers",
+            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+          },
+          "sampleDetails" : {
+            "type" : "TopN",
+            "sortBy" : [ ]
+          }
+        }
+      },
+      "LOAD_DATASET4" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "EVENT_TYPE",
+            "API_TYPE",
+            "ENTITY_NAME",
+            "TIMESTAMP_DERIVED",
+            "METHOD_NAME",
+            "RUN_TIME",
+            "ORGANIZATION_ID"
+          ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "APIWithUsers",
+            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+          },
+          "sampleDetails" : {
+            "type" : "TopN",
+            "sortBy" : [ ]
+          }
+        }
+      },
+      "LOAD_DATASET5" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "TIMESTAMP_DERIVED",
+            "EVENT_TYPE",
+            "REQUEST_ID",
+            "ORGANIZATION_ID"
+          ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "ApexUnexpectedExceptionStageCopy",
+            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+          },
+          "sampleDetails" : {
+            "type" : "TopN",
+            "sortBy" : [ ]
+          }
+        }
+      },
+      "LOAD_DATASET6" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "EVENT_TYPE",
+            "REQUEST_ID",
+            "TRIGGER_NAME",
+            "TIMESTAMP_DERIVED",
+            "RUN_TIME",
+            "ORGANIZATION_ID"
+          ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "ApexTriggerWithUsers",
+            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+          },
+          "sampleDetails" : {
+            "type" : "TopN",
+            "sortBy" : [ ]
+          }
+        }
+      },
+      "LOAD_DATASET7" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "EVENT_TYPE",
+            "REQUEST_ID",
+            "URI",
+            "CLASS_NAME",
+            "TIMESTAMP_DERIVED",
+            "METHOD_NAME",
+            "RUN_TIME",
+            "ORGANIZATION_ID"
+          ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "ApexSoapWithUsers",
+            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+          },
+          "sampleDetails" : {
+            "type" : "TopN",
+            "sortBy" : [ ]
+          }
+        }
+      },
+      "LOAD_DATASET8" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "EVENT_TYPE",
+            "REQUEST_ID",
+            "URI",
+            "ENTITY_NAME",
+            "TIMESTAMP_DERIVED",
+            "METHOD",
+            "RUN_TIME",
+            "ORGANIZATION_ID"
+          ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "ApexRestApiWithUsers",
+            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+          },
+          "sampleDetails" : {
+            "type" : "TopN",
+            "sortBy" : [ ]
+          }
+        }
+      },
+      "LOAD_DATASET9" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "EVENT_TYPE",
+            "REQUEST_ID",
+            "ENTRY_POINT",
+            "QUIDDITY",
+            "TIMESTAMP_DERIVED",
+            "RUN_TIME",
+            "ORGANIZATION_ID"
+          ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "ApexExecutionWithUsers",
+            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+          },
+          "sampleDetails" : {
+            "type" : "TopN",
+            "sortBy" : [ ]
+          }
+        }
+      },
+      "LOAD_DATASET10" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "EVENT_TYPE",
+            "URI",
+            "ORGANIZATION_ID",
+            "ENTITY_NAME",
+            "TIMESTAMP_DERIVED",
+            "METHOD",
+            "RUN_TIME"
+          ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "RestApiWithUsers",
+            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+          },
+          "sampleDetails" : {
+            "type" : "TopN",
+            "sortBy" : [ ]
+          }
+        }
+      },
+      "FORMULA0" : {
+        "action" : "formula",
+        "sources" : [
+          "LOAD_DATASET10"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "Summary",
+              "label" : "Summary",
+              "formulaExpression" : "concat(METHOD,'-',URI,'-',ENTITY_NAME)",
+              "precision" : 255,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "DROP_FIELDS0" : {
+        "action" : "schema",
+        "sources" : [
+          "FORMULA0"
+        ],
+        "parameters" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "ENTITY_NAME",
+              "METHOD",
+              "URI"
+            ]
+          }
+        }
+      },
+      "FORMULA15" : {
+        "action" : "formula",
+        "sources" : [
+          "DROP_FIELDS0"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "UsageType",
+              "label" : "Usage Type",
+              "formulaExpression" : "'API'",
+              "precision" : 20,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "FORMULA1" : {
+        "action" : "formula",
+        "sources" : [
+          "LOAD_DATASET8"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "Symmary",
+              "label" : "Summary",
+              "formulaExpression" : "concat(METHOD,'-',URI,'-',ENTITY_NAME)",
+              "precision" : 255,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "DROP_FIELDS1" : {
+        "action" : "schema",
+        "sources" : [
+          "FORMULA1"
+        ],
+        "parameters" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "URI",
+              "METHOD",
+              "ENTITY_NAME"
+            ]
+          }
+        }
+      },
+      "FORMULA12" : {
+        "action" : "formula",
+        "sources" : [
+          "DROP_FIELDS1"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "UsageType",
+              "label" : "Usage Type",
+              "formulaExpression" : "'Apex'",
+              "precision" : 20,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "FORMULA2" : {
+        "action" : "formula",
+        "sources" : [
+          "LOAD_DATASET7"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "Summary",
+              "label" : "Summary",
+              "formulaExpression" : "concat(METHOD_NAME,'-',URI,'-',CLASS_NAME)",
+              "precision" : 255,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "DROP_FIELDS2" : {
+        "action" : "schema",
+        "sources" : [
+          "FORMULA2"
+        ],
+        "parameters" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "URI",
+              "METHOD_NAME",
+              "CLASS_NAME"
+            ]
+          }
+        }
+      },
+      "FORMULA13" : {
+        "action" : "formula",
+        "sources" : [
+          "DROP_FIELDS2"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "UsageType",
+              "label" : "Usage Type",
+              "formulaExpression" : "'Apex'",
+              "precision" : 20,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "FILTER0" : {
+        "action" : "filter",
+        "sources" : [
+          "FORMULA14"
+        ],
+        "parameters" : {
+          "filterExpressions" : [
+            {
+              "type" : "TEXT",
+              "field" : "ENTRY_POINT",
+              "operator" : "NOT",
+              "operands" : [
+                "TRIGGERS"
+              ]
+            },
+            {
+              "type" : "TEXT",
+              "field" : "QUIDDITY",
+              "operator" : "NOT",
+              "operands" : [
+                "H",
+                "V",
+                "W"
+              ]
+            }
+          ]
+        }
+      },
+      "FORMULA3" : {
+        "action" : "formula",
+        "sources" : [
+          "LOAD_DATASET4"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "APIType",
+              "label" : "API Type",
+              "formulaExpression" : "case when API_TYPE = 'D' then 'Apex Class' when API_TYPE = 'E' then 'SOAP Enterprise' when API_TYPE = 'M' then 'SOAP Metadata' when API_TYPE = 'P' then 'SOAP Partner' when API_TYPE = 'S' then 'SOAP Apex' when API_TYPE = 'T' then 'SOAP Tooling' when API_TYPE = 'f' then 'Feed' when API_TYPE = 'l' then 'Live Agent' when API_TYPE = 'p' then 'SOAP ClientSync' else 'Unknown' end",
+              "precision" : 255,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "DROP_FIELDS3" : {
+        "action" : "schema",
+        "sources" : [
+          "FORMULA4"
+        ],
+        "parameters" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "ENTITY_NAME",
+              "METHOD_NAME"
+            ]
+          }
+        }
+      },
+      "FORMULA4" : {
+        "action" : "formula",
+        "sources" : [
+          "FORMULA3"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "Summary",
+              "label" : "Summary",
+              "formulaExpression" : "concat(APIType,'-',METHOD_NAME,'-',ENTITY_NAME)",
+              "precision" : 255,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "FORMULA17" : {
+        "action" : "formula",
+        "sources" : [
+          "DROP_FIELDS3"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "UsageType",
+              "label" : "Usage Type",
+              "formulaExpression" : "'API'",
+              "precision" : 20,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "FORMULA5" : {
+        "action" : "formula",
+        "sources" : [
+          "LOAD_DATASET3"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "Summary",
+              "label" : "Summary",
+              "formulaExpression" : "CASE WHEN URI is null then 'Job Enqueue' WHEN URI = 'Asyncapi' then 'Job Status' else CONCAT('OPERATION_TYPE','-','ENTITY_TYPE') end",
+              "precision" : 255,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "DROP_FIELDS4" : {
+        "action" : "schema",
+        "sources" : [
+          "FORMULA5"
+        ],
+        "parameters" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "URI",
+              "ENTITY_TYPE",
+              "OPERATION_TYPE"
+            ]
+          }
+        }
+      },
+      "FORMULA18" : {
+        "action" : "formula",
+        "sources" : [
+          "DROP_FIELDS4"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "UsageType",
+              "label" : "Usage Type",
+              "formulaExpression" : "'API'",
+              "precision" : 20,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "EXTRACT0" : {
+        "action" : "extractGrains",
+        "sources" : [
+          "LOAD_DATASET5"
+        ],
+        "parameters" : {
+          "grainExtractions" : [ ]
+        }
+      },
+      "AGGREGATE1" : {
+        "action" : "aggregate",
+        "sources" : [
+          "EXTRACT0"
+        ],
+        "parameters" : {
+          "aggregations" : [
+            {
+              "action" : "COUNT",
+              "name" : "Exceptions",
+              "label" : "Exceptions"
+            }
+          ],
+          "groupings" : [
+            "REQUEST_ID"
+          ],
+          "pivots" : [ ],
+          "nodeType" : "STANDARD"
+        }
+      },
+      "JOIN0" : {
+        "action" : "join",
+        "sources" : [
+          "FORMULA16",
+          "AGGREGATE1"
+        ],
+        "schema" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "Exceptions.REQUEST_ID"
+            ]
+          }
+        },
+        "parameters" : {
+          "joinType" : "LOOKUP",
+          "leftKeys" : [
+            "REQUEST_ID"
+          ],
+          "rightQualifier" : "Exceptions",
+          "rightKeys" : [
+            "REQUEST_ID"
+          ]
+        }
+      },
+      "JOIN1" : {
+        "action" : "join",
+        "sources" : [
+          "FORMULA13",
+          "AGGREGATE1"
+        ],
+        "schema" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "Exceptions.REQUEST_ID"
+            ]
+          }
+        },
+        "parameters" : {
+          "joinType" : "LOOKUP",
+          "leftKeys" : [
+            "REQUEST_ID"
+          ],
+          "rightQualifier" : "Exceptions",
+          "rightKeys" : [
+            "REQUEST_ID"
+          ]
+        }
+      },
+      "JOIN2" : {
+        "action" : "join",
+        "sources" : [
+          "FORMULA12",
+          "AGGREGATE1"
+        ],
+        "schema" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "Exceptions.REQUEST_ID"
+            ]
+          }
+        },
+        "parameters" : {
+          "joinType" : "LOOKUP",
+          "leftKeys" : [
+            "REQUEST_ID"
+          ],
+          "rightQualifier" : "Exceptions",
+          "rightKeys" : [
+            "REQUEST_ID"
+          ]
+        }
+      },
+      "JOIN3" : {
+        "action" : "join",
+        "sources" : [
+          "FILTER0",
+          "AGGREGATE1"
+        ],
+        "schema" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "Exceptions.REQUEST_ID"
+            ]
+          }
+        },
+        "parameters" : {
+          "joinType" : "LOOKUP",
+          "leftKeys" : [
+            "REQUEST_ID"
+          ],
+          "rightQualifier" : "Exceptions",
+          "rightKeys" : [
+            "REQUEST_ID"
+          ]
+        }
+      },
+      "APPEND0" : {
+        "action" : "appendV2",
+        "sources" : [
+          "APPEND8",
+          "FORMULA15"
+        ],
+        "parameters" : {
+          "fieldMappings" : [
+            {
+              "top" : "EVENT_TYPE",
+              "bottom" : "EVENT_TYPE"
+            },
+            {
+              "top" : "ENTRY_POINT",
+              "bottom" : "Summary"
+            },
+            {
+              "top" : "TIMESTAMP_DERIVED",
+              "bottom" : "TIMESTAMP_DERIVED"
+            },
+            {
+              "top" : "RUN_TIME",
+              "bottom" : "RUN_TIME"
+            },
+            {
+              "top" : "ORGANIZATION_ID",
+              "bottom" : "ORGANIZATION_ID"
+            },
+            {
+              "top" : "UsageType",
+              "bottom" : "UsageType"
+            }
+          ]
+        }
+      },
+      "APPEND1" : {
+        "action" : "appendV2",
+        "sources" : [
+          "JOIN2",
+          "APPEND0"
+        ],
+        "parameters" : {
+          "fieldMappings" : [
+            {
+              "top" : "EVENT_TYPE",
+              "bottom" : "EVENT_TYPE"
+            },
+            {
+              "top" : "REQUEST_ID",
+              "bottom" : "REQUEST_ID"
+            },
+            {
+              "top" : "TIMESTAMP_DERIVED",
+              "bottom" : "TIMESTAMP_DERIVED"
+            },
+            {
+              "top" : "RUN_TIME",
+              "bottom" : "RUN_TIME"
+            },
+            {
+              "top" : "ORGANIZATION_ID",
+              "bottom" : "ORGANIZATION_ID"
+            },
+            {
+              "top" : "Symmary",
+              "bottom" : "ENTRY_POINT"
+            },
+            {
+              "top" : "UsageType",
+              "bottom" : "UsageType"
+            },
+            {
+              "top" : "Exceptions.Exceptions",
+              "bottom" : "Exceptions.Exceptions"
+            }
+          ]
+        }
+      },
+      "APPEND2" : {
+        "action" : "appendV2",
+        "sources" : [
+          "APPEND1",
+          "JOIN1"
+        ],
+        "parameters" : {
+          "fieldMappings" : [
+            {
+              "top" : "EVENT_TYPE",
+              "bottom" : "EVENT_TYPE"
+            },
+            {
+              "top" : "REQUEST_ID",
+              "bottom" : "REQUEST_ID"
+            },
+            {
+              "top" : "TIMESTAMP_DERIVED",
+              "bottom" : "TIMESTAMP_DERIVED"
+            },
+            {
+              "top" : "RUN_TIME",
+              "bottom" : "RUN_TIME"
+            },
+            {
+              "top" : "ORGANIZATION_ID",
+              "bottom" : "ORGANIZATION_ID"
+            },
+            {
+              "top" : "Symmary",
+              "bottom" : "Summary"
+            },
+            {
+              "top" : "UsageType",
+              "bottom" : "UsageType"
+            },
+            {
+              "top" : "Exceptions.Exceptions",
+              "bottom" : "Exceptions.Exceptions"
+            }
+          ]
+        }
+      },
+      "APPEND3" : {
+        "action" : "appendV2",
+        "sources" : [
+          "APPEND2",
+          "FORMULA17"
+        ],
+        "parameters" : {
+          "fieldMappings" : [
+            {
+              "top" : "EVENT_TYPE",
+              "bottom" : "EVENT_TYPE"
+            },
+            {
+              "top" : "TIMESTAMP_DERIVED",
+              "bottom" : "TIMESTAMP_DERIVED"
+            },
+            {
+              "top" : "RUN_TIME",
+              "bottom" : "RUN_TIME"
+            },
+            {
+              "top" : "ORGANIZATION_ID",
+              "bottom" : "ORGANIZATION_ID"
+            },
+            {
+              "top" : "Symmary",
+              "bottom" : "Summary"
+            },
+            {
+              "top" : "UsageType",
+              "bottom" : "UsageType"
+            }
+          ]
+        }
+      },
+      "APPEND4" : {
+        "action" : "appendV2",
+        "sources" : [
+          "APPEND3",
+          "FORMULA18"
+        ],
+        "parameters" : {
+          "fieldMappings" : [
+            {
+              "top" : "EVENT_TYPE",
+              "bottom" : "EVENT_TYPE"
+            },
+            {
+              "top" : "TIMESTAMP_DERIVED",
+              "bottom" : "TIMESTAMP_DERIVED"
+            },
+            {
+              "top" : "RUN_TIME",
+              "bottom" : "RUN_TIME"
+            },
+            {
+              "top" : "ORGANIZATION_ID",
+              "bottom" : "ORGANIZATION_ID"
+            },
+            {
+              "top" : "Symmary",
+              "bottom" : "Summary"
+            },
+            {
+              "top" : "UsageType",
+              "bottom" : "UsageType"
+            }
+          ]
+        }
+      },
+      "APPEND5" : {
+        "action" : "appendV2",
+        "sources" : [
+          "APPEND4",
+          "FORMULA19"
+        ],
+        "parameters" : {
+          "fieldMappings" : [
+            {
+              "top" : "EVENT_TYPE",
+              "bottom" : "EVENT_TYPE"
+            },
+            {
+              "top" : "TIMESTAMP_DERIVED",
+              "bottom" : "TIMESTAMP_DERIVED"
+            },
+            {
+              "top" : "RUN_TIME",
+              "bottom" : "RUN_TIME"
+            },
+            {
+              "top" : "ORGANIZATION_ID",
+              "bottom" : "ORGANIZATION_ID"
+            },
+            {
+              "top" : "Symmary",
+              "bottom" : "Summary"
+            },
+            {
+              "top" : "UsageType",
+              "bottom" : "UsageType"
+            }
+          ]
+        }
+      },
+      "APPEND6" : {
+        "action" : "appendV2",
+        "sources" : [
+          "APPEND5",
+          "FORMULA20"
+        ],
+        "parameters" : {
+          "fieldMappings" : [
+            {
+              "top" : "EVENT_TYPE",
+              "bottom" : "EVENT_TYPE"
+            },
+            {
+              "top" : "TIMESTAMP_DERIVED",
+              "bottom" : "TIMESTAMP_DERIVED"
+            },
+            {
+              "top" : "RUN_TIME",
+              "bottom" : "RUN_TIME"
+            },
+            {
+              "top" : "ORGANIZATION_ID",
+              "bottom" : "ORGANIZATION_ID"
+            },
+            {
+              "top" : "Symmary",
+              "bottom" : "Summary"
+            },
+            {
+              "top" : "UsageType",
+              "bottom" : "UsageType"
+            }
+          ]
+        }
+      },
+      "FORMULA6" : {
+        "action" : "formula",
+        "sources" : [
+          "LOAD_DATASET2"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "Summary",
+              "label" : "Summary",
+              "formulaExpression" : "CASE WHEN \"Dashboard.Title\" is null then 'Dashboard Builder' else \"Dashboard.Title\" end",
+              "precision" : 255,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "DROP_FIELDS5" : {
+        "action" : "schema",
+        "sources" : [
+          "FORMULA6"
+        ],
+        "parameters" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "Dashboard.Title"
+            ]
+          }
+        }
+      },
+      "FORMULA19" : {
+        "action" : "formula",
+        "sources" : [
+          "DROP_FIELDS5"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "UsageType",
+              "label" : "Usage Type",
+              "formulaExpression" : "'User Interface'",
+              "precision" : 20,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "FORMULA7" : {
+        "action" : "formula",
+        "sources" : [
+          "LOAD_DATASET1"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "Summary",
+              "label" : "Summary",
+              "formulaExpression" : "CASE WHEN \"Report.Name\" is null then 'Unsaved Report / Report Builder' else \"Report.Name\" end",
+              "precision" : 255,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "DROP_FIELDS6" : {
+        "action" : "schema",
+        "sources" : [
+          "FORMULA7"
+        ],
+        "parameters" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "Report_Name"
+            ]
+          }
+        }
+      },
+      "FORMULA20" : {
+        "action" : "formula",
+        "sources" : [
+          "DROP_FIELDS6"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "UsageType",
+              "label" : "Usage Type",
+              "formulaExpression" : "'User Interface'",
+              "precision" : 20,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "APPEND7" : {
+        "action" : "appendV2",
+        "sources" : [
+          "APPEND6",
+          "FORMULA21"
+        ],
+        "parameters" : {
+          "fieldMappings" : [
+            {
+              "top" : "EVENT_TYPE",
+              "bottom" : "EVENT_TYPE"
+            },
+            {
+              "top" : "TIMESTAMP_DERIVED",
+              "bottom" : "TIMESTAMP_DERIVED"
+            },
+            {
+              "top" : "RUN_TIME",
+              "bottom" : "RUN_TIME"
+            },
+            {
+              "top" : "ORGANIZATION_ID",
+              "bottom" : "ORGANIZATION_ID"
+            },
+            {
+              "top" : "Symmary",
+              "bottom" : "URI"
+            },
+            {
+              "top" : "UsageType",
+              "bottom" : "UsageType"
+            }
+          ]
+        }
+      },
+      "EXTRACT2" : {
+        "action" : "extractGrains",
+        "sources" : [
+          "REPLACE2"
+        ],
+        "parameters" : {
+          "grainExtractions" : [ ]
+        }
+      },
+      "AGGREGATE5" : {
+        "action" : "aggregate",
+        "sources" : [
+          "EXTRACT2"
+        ],
+        "schema" : {
+          "fields" : [
+            {
+              "name" : "TotalCarbonG",
+              "newProperties" : {
+                "typeProperties" : {
+                  "type" : "NUMBER",
+                  "scale" : 12,
+                  "precision" : 18
+                }
+              }
+            }
+          ]
+        },
+        "parameters" : {
+          "aggregations" : [
+            {
+              "action" : "SUM",
+              "source" : "RUN_TIME",
+              "name" : "TotalRunTime",
+              "label" : "Total Run TIme"
+            },
+            {
+              "action" : "SUM",
+              "source" : "Exceptions.Exceptions",
+              "name" : "TotalExceptions",
+              "label" : "Total Exceptions"
+            },
+            {
+              "action" : "SUM",
+              "source" : "CarbonKG",
+              "name" : "TotalCarbonKG",
+              "label" : "Total Carbon (Kg)"
+            },
+            {
+              "action" : "SUM",
+              "source" : "CarbonLB",
+              "name" : "TotalCarbonLBS",
+              "label" : "Total Carbon (Lbs)"
+            },
+            {
+              "action" : "COUNT",
+              "name" : "TotalExecutions",
+              "label" : "Total Executions"
+            },
+            {
+              "action" : "SUM",
+              "source" : "CarbonG",
+              "name" : "TotalCarbonG",
+              "label" : "Total Carbon (g)"
+            }
+          ],
+          "groupings" : [
+            "UsageType",
+            "Source"
+          ],
+          "pivots" : [ ],
+          "nodeType" : "STANDARD"
+        }
+      },
+      "OUTPUT0" : {
+        "action" : "save",
+        "sources" : [
+          "DROP_FIELDS7"
+        ],
+        "parameters" : {
+          "fields" : [ ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "Carbon Emissions",
+            "name" : "${App.Datasets.CarbonEmissions_tp.Name}",
+            "folderName" : "${App.Folder.FullyQualifiedName}"
+          },
+          "measuresToCurrencies" : [ ]
+        }
+      },
+      "FORMULA10" : {
+        "action" : "formula",
+        "sources" : [
+          "FILTER1"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "NUMBER",
+              "name" : "CarbonLB",
+              "label" : "Carbon (Lb)",
+              "formulaExpression" : "RUN_TIME*\"OrgCarbonData.CarbonData.Weighted_lbs_Carbon_per_CPU_ms\"/power(10,6)",
+              "precision" : 18,
+              "scale" : 12,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "FORMULA11" : {
+        "action" : "formula",
+        "sources" : [
+          "FORMULA10"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "NUMBER",
+              "name" : "CarbonKG",
+              "label" : "Carbon (Kg)",
+              "formulaExpression" : "(RUN_TIME*\"OrgCarbonData.CarbonData.Weighted_lbs_Carbon_per_CPU_ms\")/2.205/power(10,6)",
+              "precision" : 18,
+              "scale" : 12,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "FORMULA23" : {
+        "action" : "formula",
+        "sources" : [
+          "FORMULA11"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "NUMBER",
+              "name" : "CarbonG",
+              "label" : "Carbon (g)",
+              "formulaExpression" : "RUN_TIME*\"OrgCarbonData.CarbonData.Weighted_lbs_Carbon_per_CPU_ms\"*453.6/power(10,6)",
+              "precision" : 18,
+              "scale" : 12,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "OUTPUT1" : {
+        "action" : "save",
+        "sources" : [
+          "EDIT_ATTRIBUTES5"
+        ],
+        "parameters" : {
+          "fields" : [ ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "Aggregated Carbon Emissions",
+            "name" : "${App.Datasets.AggregatedCarbonEmissions_tp.Name}",
+            "folderName" : "${App.Folder.FullyQualifiedName}"
+          },
+          "measuresToCurrencies" : [ ]
+        }
+      },
+      "APPEND8" : {
+        "action" : "appendV2",
+        "sources" : [
+          "JOIN3",
+          "JOIN0"
+        ],
+        "parameters" : {
+          "fieldMappings" : [
+            {
+              "top" : "EVENT_TYPE",
+              "bottom" : "EVENT_TYPE"
+            },
+            {
+              "top" : "REQUEST_ID",
+              "bottom" : "REQUEST_ID"
+            },
+            {
+              "top" : "ENTRY_POINT",
+              "bottom" : "TRIGGER_NAME"
+            },
+            {
+              "top" : "TIMESTAMP_DERIVED",
+              "bottom" : "TIMESTAMP_DERIVED"
+            },
+            {
+              "top" : "RUN_TIME",
+              "bottom" : "RUN_TIME"
+            },
+            {
+              "top" : "ORGANIZATION_ID",
+              "bottom" : "ORGANIZATION_ID"
+            },
+            {
+              "top" : "UsageType",
+              "bottom" : "UsageType"
+            },
+            {
+              "top" : "Exceptions.Exceptions",
+              "bottom" : "Exceptions.Exceptions"
+            }
+          ]
+        }
+      },
+      "EDIT_ATTRIBUTES0" : {
+        "action" : "schema",
+        "sources" : [
+          "FORMULA23"
+        ],
+        "parameters" : {
+          "fields" : [
+            {
+              "name" : "EVENT_TYPE",
+              "newProperties" : {
+                "label" : "Source",
+                "name" : "Source"
+              }
+            }
+          ]
+        }
+      },
+      "REPLACE1" : {
+        "action" : "formula",
+        "sources" : [
+          "EDIT_ATTRIBUTES0"
+        ],
+        "schema" : {
+          "fields" : [
+            {
+              "name" : "Source_replace",
+              "newProperties" : {
+                "name" : "Source"
+              }
+            }
+          ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "Source"
+            ]
+          }
+        },
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "Source_replace",
+              "label" : "Source",
+              "formulaExpression" : "replace(Source, 'URI', 'User Interface')",
+              "precision" : 255
+            }
+          ]
+        }
+      },
+      "REPLACE2" : {
+        "action" : "formula",
+        "sources" : [
+          "REPLACE1"
+        ],
+        "schema" : {
+          "fields" : [
+            {
+              "name" : "Source_replace",
+              "newProperties" : {
+                "name" : "Source"
+              }
+            }
+          ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "Source"
+            ]
+          }
+        },
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "Source_replace",
+              "label" : "Source",
+              "formulaExpression" : "replace(Source, 'VisualforceRequest', 'Visualforce')",
+              "precision" : 255
+            }
+          ]
+        }
+      },
+      "LOAD_DATASET11" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "EVENT_TYPE",
+            "TIMESTAMP_DERIVED",
+            "PAGE_NAME",
+            "RUN_TIME",
+            "ORGANIZATION_ID"
+          ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "VisualforceRequestWithUsers",
+            "name" : "\\${App.Datasets.${App.Datasets[Rules.CurrentNode].Name}.FullyQualifiedName}"
+          },
+          "sampleDetails" : {
+            "type" : "TopN",
+            "sortBy" : [ ]
+          }
+        }
+      },
+      "APPEND9" : {
+        "action" : "appendV2",
+        "sources" : [
+          "APPEND7",
+          "FORMULA22"
+        ],
+        "parameters" : {
+          "fieldMappings" : [
+            {
+              "top" : "EVENT_TYPE",
+              "bottom" : "EVENT_TYPE"
+            },
+            {
+              "top" : "TIMESTAMP_DERIVED",
+              "bottom" : "TIMESTAMP_DERIVED"
+            },
+            {
+              "top" : "RUN_TIME",
+              "bottom" : "RUN_TIME"
+            },
+            {
+              "top" : "ORGANIZATION_ID",
+              "bottom" : "ORGANIZATION_ID"
+            },
+            {
+              "top" : "Symmary",
+              "bottom" : "PAGE_NAME"
+            },
+            {
+              "top" : "UsageType",
+              "bottom" : "UsageType"
+            }
+          ]
+        }
+      },
+      "LOAD_DATASET12" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "Instance",
+            "Weighted_lbs_Carbon_per_CPU_ms"
+          ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "Instance Carbon Per CPU Reference",
+            "name" : "${App.Datasets.Instance_Carbon_Per_CPU_Reference.FullyQualifiedName}"
+          },
+          "sampleDetails" : {
+            "type" : "TopN",
+            "sortBy" : [ ]
+          }
+        }
+      },
+      "LOAD_DATASET13" : {
+        "action" : "load",
+        "sources" : [ ],
+        "parameters" : {
+          "fields" : [
+            "Id",
+            "Name",
+            "InstanceName"
+          ],
+          "dataset" : {
+            "type" : "connectedDataset",
+            "label" : "Organization",
+            "connectionName" : "SFDC_LOCAL",
+            "sourceObjectName" : "Organization"
+          },
+          "sampleDetails" : {
+            "type" : "TopN",
+            "sortBy" : [ ]
+          }
+        }
+      },
+      "JOIN4" : {
+        "action" : "join",
+        "sources" : [
+          "TRIM0",
+          "LOAD_DATASET12"
+        ],
+        "schema" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "CarbonData.Instance"
+            ]
+          }
+        },
+        "parameters" : {
+          "joinType" : "LOOKUP",
+          "leftKeys" : [
+            "InstanceName"
+          ],
+          "rightQualifier" : "CarbonData",
+          "rightKeys" : [
+            "Instance"
+          ]
+        }
+      },
+      "JOIN5" : {
+        "action" : "join",
+        "sources" : [
+          "APPEND9",
+          "JOIN4"
+        ],
+        "schema" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "OrgCarbonData.Name",
+              "OrgCarbonData.InstanceName",
+              "OrgCarbonData.Id"
+            ]
+          }
+        },
+        "parameters" : {
+          "joinType" : "LOOKUP",
+          "leftKeys" : [
+            "ORGANIZATION_ID"
+          ],
+          "rightQualifier" : "OrgCarbonData",
+          "rightKeys" : [
+            "Id"
+          ]
+        }
+      },
+      "EDIT_ATTRIBUTES1_copy0" : {
+        "action" : "schema",
+        "sources" : [
+          "AGGREGATE5"
+        ],
+        "parameters" : {
+          "fields" : [
+            {
+              "name" : "TotalCarbonKG",
+              "newProperties" : {
+                "label" : "Total Carbon (Kg)",
+                "name" : "TotalCarbonKG",
+                "typeProperties" : {
+                  "type" : "NUMBER",
+                  "scale" : 12,
+                  "precision" : 18
+                }
+              }
+            }
+          ]
+        }
+      },
+      "EDIT_ATTRIBUTES2_copy0" : {
+        "action" : "schema",
+        "sources" : [
+          "EDIT_ATTRIBUTES1_copy0"
+        ],
+        "parameters" : {
+          "fields" : [
+            {
+              "name" : "TotalCarbonLBS",
+              "newProperties" : {
+                "label" : "Total Carbon (Lb)",
+                "name" : "TotalCarbonLB",
+                "typeProperties" : {
+                  "type" : "NUMBER",
+                  "scale" : 12,
+                  "precision" : 18
+                }
+              }
+            }
+          ]
+        }
+      },
+      "EDIT_ATTRIBUTES5" : {
+        "action" : "schema",
+        "sources" : [
+          "EDIT_ATTRIBUTES2_copy0"
+        ],
+        "parameters" : {
+          "fields" : [
+            {
+              "name" : "TotalCarbonG",
+              "newProperties" : {
+                "label" : "Total Carbon (g)",
+                "name" : "TotalCarbonG",
+                "typeProperties" : {
+                  "type" : "NUMBER",
+                  "scale" : 12,
+                  "precision" : 18
+                }
+              }
+            }
+          ]
+        }
+      },
+      "DROP_FIELDS7" : {
+        "action" : "schema",
+        "sources" : [
+          "FILTER2"
+        ],
+        "parameters" : {
+          "fields" : [ ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "REQUEST_ID",
+              "ORGANIZATION_ID",
+              "OrgCarbonData.CarbonData.Weighted_lbs_Carbon_per_CPU_ms"
+            ]
+          }
+        }
+      },
+      "FORMULA14" : {
+        "action" : "formula",
+        "sources" : [
+          "LOAD_DATASET9"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "UsageType",
+              "label" : "Usage Type",
+              "formulaExpression" : "'Apex'",
+              "precision" : 20,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "FORMULA16" : {
+        "action" : "formula",
+        "sources" : [
+          "LOAD_DATASET6"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "UsageType",
+              "label" : "Usage Type",
+              "formulaExpression" : "'Apex'",
+              "precision" : 20,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "FORMULA21" : {
+        "action" : "formula",
+        "sources" : [
+          "LOAD_DATASET0"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "UsageType",
+              "label" : "Usage Type",
+              "formulaExpression" : "'User Interface'",
+              "precision" : 20,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "FORMULA22" : {
+        "action" : "formula",
+        "sources" : [
+          "LOAD_DATASET11"
+        ],
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "UsageType",
+              "label" : "Usage Type",
+              "formulaExpression" : "'User Interface'",
+              "precision" : 255,
+              "defaultValue" : ""
+            }
+          ]
+        }
+      },
+      "TRIM0" : {
+        "action" : "formula",
+        "sources" : [
+          "LOAD_DATASET13"
+        ],
+        "schema" : {
+          "fields" : [
+            {
+              "name" : "Id_trim",
+              "newProperties" : {
+                "name" : "Id"
+              }
+            }
+          ],
+          "slice" : {
+            "mode" : "DROP",
+            "ignoreMissingFields" : true,
+            "fields" : [
+              "Id"
+            ]
+          }
+        },
+        "parameters" : {
+          "expressionType" : "SQL",
+          "fields" : [
+            {
+              "type" : "TEXT",
+              "name" : "Id_trim",
+              "label" : "Organization ID",
+              "formulaExpression" : "trim(Id)",
+              "precision" : 15
+            }
+          ]
+        }
+      },
+      "FILTER1" : {
+        "action" : "filter",
+        "sources" : [
+          "JOIN5"
+        ],
+        "parameters" : {
+          "filterExpressions" : [
+            {
+              "type" : "DATETIME",
+              "field" : "TIMESTAMP_DERIVED",
+              "operator" : "GREATER_THAN",
+              "operands" : [
+                "1577836800000"
+              ]
+            }
+          ]
+        }
+      },
+      "OUTPUT2" : {
+        "action" : "save",
+        "sources" : [
+          "JOIN4"
+        ],
+        "parameters" : {
+          "fields" : [ ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "OrgInfo",
+            "name" : "${App.Datasets.OrgInfo_tp.Name}",
+            "folderName" : "${App.Folder.FullyQualifiedName}"
+          },
+          "measuresToCurrencies" : [ ]
+        }
+      },
+      "EXTRACT2_copy0" : {
+        "action" : "extractGrains",
+        "sources" : [
+          "REPLACE2"
+        ],
+        "parameters" : {
+          "grainExtractions" : [
+            {
+              "source" : "TIMESTAMP_DERIVED",
+              "targets" : [
+                {
+                  "name" : "TIMESTAMP_DERIVED_WEEK",
+                  "label" : "TIMESTAMP_DERIVED Week",
+                  "grainType" : "WEEK"
+                },
+                {
+                  "name" : "TIMESTAMP_DERIVED_YEAR",
+                  "label" : "TIMESTAMP_DERIVED Year",
+                  "grainType" : "YEAR"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "AGGREGATE5_copy0" : {
+        "action" : "aggregate",
+        "sources" : [
+          "EXTRACT2_copy0"
+        ],
+        "schema" : {
+          "fields" : [
+            {
+              "name" : "TotalCarbonG",
+              "newProperties" : {
+                "typeProperties" : {
+                  "type" : "NUMBER",
+                  "scale" : 12,
+                  "precision" : 18
+                }
+              }
+            }
+          ]
+        },
+        "parameters" : {
+          "aggregations" : [
+            {
+              "action" : "SUM",
+              "source" : "RUN_TIME",
+              "name" : "TotalRunTime",
+              "label" : "Total Run TIme"
+            },
+            {
+              "action" : "SUM",
+              "source" : "Exceptions.Exceptions",
+              "name" : "TotalExceptions",
+              "label" : "Total Exceptions"
+            },
+            {
+              "action" : "SUM",
+              "source" : "CarbonKG",
+              "name" : "TotalCarbonKG",
+              "label" : "Total Carbon (Kg)"
+            },
+            {
+              "action" : "SUM",
+              "source" : "CarbonLB",
+              "name" : "TotalCarbonLBS",
+              "label" : "Total Carbon (Lbs)"
+            },
+            {
+              "action" : "COUNT",
+              "name" : "TotalExecutions",
+              "label" : "Total Executions"
+            },
+            {
+              "action" : "SUM",
+              "source" : "CarbonG",
+              "name" : "TotalCarbonG",
+              "label" : "Total Carbon (g)"
+            }
+          ],
+          "groupings" : [
+            "TIMESTAMP_DERIVED_WEEK",
+            "TIMESTAMP_DERIVED_YEAR",
+            "UsageType",
+            "Source"
+          ],
+          "pivots" : [ ],
+          "nodeType" : "STANDARD"
+        }
+      },
+      "OUTPUT3" : {
+        "action" : "save",
+        "sources" : [
+          "EDIT_ATTRIBUTES5_copy0"
+        ],
+        "parameters" : {
+          "fields" : [ ],
+          "dataset" : {
+            "type" : "analyticsDataset",
+            "label" : "Carbon Emissions By Time",
+            "name" : "${App.Datasets.CarbonEmissionsByTime_tp.Name}",
+            "folderName" : "${App.Folder.FullyQualifiedName}"
+          },
+          "measuresToCurrencies" : [ ]
+        }
+      },
+      "EDIT_ATTRIBUTES1_copy0_copy0" : {
+        "action" : "schema",
+        "sources" : [
+          "AGGREGATE5_copy0"
+        ],
+        "parameters" : {
+          "fields" : [
+            {
+              "name" : "TotalCarbonKG",
+              "newProperties" : {
+                "label" : "Total Carbon (Kg)",
+                "name" : "TotalCarbonKG",
+                "typeProperties" : {
+                  "type" : "NUMBER",
+                  "scale" : 12,
+                  "precision" : 18
+                }
+              }
+            }
+          ]
+        }
+      },
+      "EDIT_ATTRIBUTES2_copy0_copy0" : {
+        "action" : "schema",
+        "sources" : [
+          "EDIT_ATTRIBUTES1_copy0_copy0"
+        ],
+        "parameters" : {
+          "fields" : [
+            {
+              "name" : "TotalCarbonLBS",
+              "newProperties" : {
+                "label" : "Total Carbon (Lb)",
+                "name" : "TotalCarbonLB",
+                "typeProperties" : {
+                  "type" : "NUMBER",
+                  "scale" : 12,
+                  "precision" : 18
+                }
+              }
+            }
+          ]
+        }
+      },
+      "EDIT_ATTRIBUTES5_copy0" : {
+        "action" : "schema",
+        "sources" : [
+          "EDIT_ATTRIBUTES2_copy0_copy0"
+        ],
+        "parameters" : {
+          "fields" : [
+            {
+              "name" : "TotalCarbonG",
+              "newProperties" : {
+                "label" : "Total Carbon (g)",
+                "name" : "TotalCarbonG",
+                "typeProperties" : {
+                  "type" : "NUMBER",
+                  "scale" : 12,
+                  "precision" : 18
+                }
+              }
+            }
+          ]
+        }
+      },
+      "FILTER2" : {
+        "action" : "filter",
+        "sources" : [
+          "REPLACE2"
+        ],
+        "parameters" : {
+          "filterExpressions" : [
+            {
+              "type" : "TEXT",
+              "field" : "UsageType",
+              "operator" : "EQUAL",
+              "operands" : [
+                "API"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "ui" : {
+      "nodes" : {
+        "LOAD_DATASET0" : {
+          "label" : "URIWithUsers",
+          "type" : "LOAD_DATASET",
+          "top" : 392,
+          "left" : 1512,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "LOAD_DATASET1" : {
+          "label" : "ReportWithUsers",
+          "type" : "LOAD_DATASET",
+          "top" : 252,
+          "left" : 1372,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "LOAD_DATASET2" : {
+          "label" : "DashboardWithUsers",
+          "type" : "LOAD_DATASET",
+          "top" : 392,
+          "left" : 1232,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "LOAD_DATASET3" : {
+          "label" : "BulkApiWithUsers",
+          "type" : "LOAD_DATASET",
+          "top" : 252,
+          "left" : 1092,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "LOAD_DATASET4" : {
+          "label" : "APIWithUsers",
+          "type" : "LOAD_DATASET",
+          "top" : 392,
+          "left" : 952,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "LOAD_DATASET5" : {
+          "label" : "ApexUnexpectedExceptionStageCopy",
+          "type" : "LOAD_DATASET",
+          "top" : 532.3,
+          "left" : 251.7,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "LOAD_DATASET6" : {
+          "label" : "ApexTriggerWithUsers",
+          "type" : "LOAD_DATASET",
+          "top" : 252,
+          "left" : 252,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "LOAD_DATASET7" : {
+          "label" : "ApexSoapWithUsers",
+          "type" : "LOAD_DATASET",
+          "top" : 252,
+          "left" : 672,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "LOAD_DATASET8" : {
+          "label" : "ApexRestApiWithUsers",
+          "type" : "LOAD_DATASET",
+          "top" : 392,
+          "left" : 532,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "LOAD_DATASET9" : {
+          "label" : "ApexExecutionWithUsers",
+          "type" : "LOAD_DATASET",
+          "top" : 112,
+          "left" : 112,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "LOAD_DATASET10" : {
+          "label" : "RestApiWithUsers",
+          "type" : "LOAD_DATASET",
+          "top" : 672,
+          "left" : 532,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "TRANSFORM0" : {
+          "label" : "RestAPITransform",
+          "description" : "",
+          "type" : "TRANSFORM",
+          "top" : 672,
+          "left" : 672,
+          "graph" : {
+            "FORMULA0" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "Summary"
+            },
+            "DROP_FIELDS0" : {
+              "label" : "Drop Columns"
+            },
+            "FORMULA15" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "UsageType"
+            }
+          },
+          "connectors" : [
+            {
+              "source" : "FORMULA0",
+              "target" : "DROP_FIELDS0"
+            },
+            {
+              "source" : "DROP_FIELDS0",
+              "target" : "FORMULA15"
+            }
+          ]
+        },
+        "TRANSFORM1" : {
+          "label" : "ApexRESTTransform",
+          "description" : "",
+          "type" : "TRANSFORM",
+          "top" : 392,
+          "left" : 672,
+          "graph" : {
+            "FORMULA1" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "Summary"
+            },
+            "DROP_FIELDS1" : {
+              "label" : "Drop Columns"
+            },
+            "FORMULA12" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "UseType"
+            }
+          },
+          "connectors" : [
+            {
+              "source" : "FORMULA1",
+              "target" : "DROP_FIELDS1"
+            },
+            {
+              "source" : "DROP_FIELDS1",
+              "target" : "FORMULA12"
+            }
+          ]
+        },
+        "TRANSFORM2" : {
+          "label" : "ApexSOAPTransform",
+          "description" : "",
+          "type" : "TRANSFORM",
+          "top" : 252,
+          "left" : 812,
+          "graph" : {
+            "FORMULA2" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "Summary"
+            },
+            "DROP_FIELDS2" : {
+              "label" : "Drop Columns"
+            },
+            "FORMULA13" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "UsageType"
+            }
+          },
+          "connectors" : [
+            {
+              "source" : "FORMULA2",
+              "target" : "DROP_FIELDS2"
+            },
+            {
+              "source" : "DROP_FIELDS2",
+              "target" : "FORMULA13"
+            }
+          ]
+        },
+        "FILTER0" : {
+          "label" : "FilterOutDupes",
+          "description" : "Quiddity = V,W,H is VF, ApexSOAP, REST",
+          "type" : "FILTER",
+          "top" : 112,
+          "left" : 392
+        },
+        "TRANSFORM3" : {
+          "label" : "TransformAPIWithUsers",
+          "description" : "",
+          "type" : "TRANSFORM",
+          "top" : 392,
+          "left" : 1092,
+          "graph" : {
+            "FORMULA3" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "API Type"
+            },
+            "DROP_FIELDS3" : {
+              "label" : "Drop Columns"
+            },
+            "FORMULA4" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "Summary"
+            },
+            "FORMULA17" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "UsageType"
+            }
+          },
+          "connectors" : [
+            {
+              "source" : "FORMULA4",
+              "target" : "DROP_FIELDS3"
+            },
+            {
+              "source" : "FORMULA3",
+              "target" : "FORMULA4"
+            },
+            {
+              "source" : "DROP_FIELDS3",
+              "target" : "FORMULA17"
+            }
+          ]
+        },
+        "TRANSFORM4" : {
+          "label" : "BulkAPITransforms",
+          "description" : "",
+          "type" : "TRANSFORM",
+          "top" : 252,
+          "left" : 1232,
+          "graph" : {
+            "FORMULA5" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "Summary"
+            },
+            "DROP_FIELDS4" : {
+              "label" : "Drop Columns"
+            },
+            "FORMULA18" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "UsageType"
+            }
+          },
+          "connectors" : [
+            {
+              "source" : "FORMULA5",
+              "target" : "DROP_FIELDS4"
+            },
+            {
+              "source" : "DROP_FIELDS4",
+              "target" : "FORMULA18"
+            }
+          ]
+        },
+        "AGGREGATE0" : {
+          "label" : "AggregateExceptions",
+          "description" : "",
+          "type" : "AGGREGATE",
+          "top" : 532,
+          "left" : 392,
+          "graph" : {
+            "EXTRACT0" : null,
+            "AGGREGATE1" : null
+          },
+          "connectors" : [
+            {
+              "source" : "EXTRACT0",
+              "target" : "AGGREGATE1"
+            }
+          ]
+        },
+        "JOIN0" : {
+          "label" : "JoinTriggersExceptions",
+          "description" : "",
+          "type" : "JOIN",
+          "top" : 252,
+          "left" : 532
+        },
+        "JOIN1" : {
+          "label" : "JoinSoapExceptions",
+          "description" : "",
+          "type" : "JOIN",
+          "top" : 252,
+          "left" : 952
+        },
+        "JOIN2" : {
+          "label" : "JoinRESTExceptions",
+          "description" : "",
+          "type" : "JOIN",
+          "top" : 392,
+          "left" : 812
+        },
+        "JOIN3" : {
+          "label" : "JoinExecutionsExceptions",
+          "description" : "",
+          "type" : "JOIN",
+          "top" : 112,
+          "left" : 532
+        },
+        "APPEND0" : {
+          "label" : "AppendRESTApex",
+          "description" : "",
+          "type" : "APPEND",
+          "top" : 112,
+          "left" : 812
+        },
+        "APPEND1" : {
+          "label" : "AppendApexRESTApex",
+          "description" : "",
+          "type" : "APPEND",
+          "top" : 112,
+          "left" : 952
+        },
+        "APPEND2" : {
+          "label" : "AppendApexSOAPApex",
+          "description" : "",
+          "type" : "APPEND",
+          "top" : 112,
+          "left" : 1092
+        },
+        "APPEND3" : {
+          "label" : "AppendAPI",
+          "description" : "",
+          "type" : "APPEND",
+          "top" : 112,
+          "left" : 1232
+        },
+        "APPEND4" : {
+          "label" : "AppendBULKAPI",
+          "description" : "",
+          "type" : "APPEND",
+          "top" : 112,
+          "left" : 1372
+        },
+        "APPEND5" : {
+          "label" : "AppendDashboard",
+          "description" : "",
+          "type" : "APPEND",
+          "top" : 112,
+          "left" : 1512
+        },
+        "APPEND6" : {
+          "label" : "AppendReports",
+          "description" : "",
+          "type" : "APPEND",
+          "top" : 112,
+          "left" : 1652
+        },
+        "TRANSFORM5" : {
+          "label" : "TransformDashboard",
+          "description" : "",
+          "type" : "TRANSFORM",
+          "top" : 392,
+          "left" : 1372,
+          "graph" : {
+            "FORMULA6" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "Summary"
+            },
+            "DROP_FIELDS5" : {
+              "label" : "Drop Columns"
+            },
+            "FORMULA19" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "UsageType"
+            }
+          },
+          "connectors" : [
+            {
+              "source" : "FORMULA6",
+              "target" : "DROP_FIELDS5"
+            },
+            {
+              "source" : "DROP_FIELDS5",
+              "target" : "FORMULA19"
+            }
+          ]
+        },
+        "TRANSFORM6" : {
+          "label" : "TransformReports",
+          "description" : "",
+          "type" : "TRANSFORM",
+          "top" : 252,
+          "left" : 1512,
+          "graph" : {
+            "FORMULA7" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "Formula"
+            },
+            "DROP_FIELDS6" : {
+              "label" : "Drop Columns"
+            },
+            "FORMULA20" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "UsageType"
+            }
+          },
+          "connectors" : [
+            {
+              "source" : "FORMULA7",
+              "target" : "DROP_FIELDS6"
+            },
+            {
+              "source" : "DROP_FIELDS6",
+              "target" : "FORMULA20"
+            }
+          ]
+        },
+        "APPEND7" : {
+          "label" : "AppendURI",
+          "description" : "",
+          "type" : "APPEND",
+          "top" : 112,
+          "left" : 1792
+        },
+        "AGGREGATE4" : {
+          "label" : "PrimaryAggregate",
+          "description" : "",
+          "type" : "AGGREGATE",
+          "top" : 112,
+          "left" : 2632,
+          "graph" : {
+            "EXTRACT2" : null,
+            "AGGREGATE5" : null
+          },
+          "connectors" : [
+            {
+              "source" : "EXTRACT2",
+              "target" : "AGGREGATE5"
+            }
+          ]
+        },
+        "OUTPUT0" : {
+          "label" : "OutputCarbonEmissions",
+          "description" : "",
+          "type" : "OUTPUT",
+          "top" : 392,
+          "left" : 2772
+        },
+        "TRANSFORM8" : {
+          "label" : "CalcCarbonIndividual",
+          "description" : "Note: we could do a second aggregation by time to dashboard reduce load for the timeline chart, but would limit the dashboard grouping to be fixed at the grain level set by the recipe (i.e. only month, week, day, etc).",
+          "type" : "TRANSFORM",
+          "top" : 112,
+          "left" : 2352,
+          "graph" : {
+            "FORMULA10" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "CarbonLbs"
+            },
+            "FORMULA11" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "CarbonKG"
+            },
+            "FORMULA23" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "CarbonG"
+            }
+          },
+          "connectors" : [
+            {
+              "source" : "FORMULA10",
+              "target" : "FORMULA11"
+            },
+            {
+              "source" : "FORMULA11",
+              "target" : "FORMULA23"
+            }
+          ]
+        },
+        "OUTPUT1" : {
+          "label" : "OutputAggEmissions",
+          "description" : "",
+          "type" : "OUTPUT",
+          "top" : 112,
+          "left" : 2912
+        },
+        "APPEND8" : {
+          "label" : "AppendApexTrigger",
+          "description" : "",
+          "type" : "APPEND",
+          "top" : 112,
+          "left" : 672
+        },
+        "TRANSFORM9" : {
+          "label" : "CleanUp",
+          "description" : "",
+          "type" : "TRANSFORM",
+          "top" : 112,
+          "left" : 2492,
+          "graph" : {
+            "EDIT_ATTRIBUTES0" : {
+              "label" : "Edit Attributes"
+            },
+            "REPLACE1" : {
+              "parameters" : {
+                "type" : "REPLACE_UI"
+              },
+              "label" : "ReplaceURI"
+            },
+            "REPLACE2" : {
+              "parameters" : {
+                "type" : "REPLACE_UI"
+              },
+              "label" : "ReplaceVisualforce"
+            }
+          },
+          "connectors" : [
+            {
+              "source" : "REPLACE1",
+              "target" : "REPLACE2"
+            },
+            {
+              "source" : "EDIT_ATTRIBUTES0",
+              "target" : "REPLACE1"
+            }
+          ]
+        },
+        "LOAD_DATASET11" : {
+          "label" : "VisualforceRequestWithUsers",
+          "type" : "LOAD_DATASET",
+          "top" : 532,
+          "left" : 1652,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "APPEND9" : {
+          "label" : "AppendVisualforce",
+          "description" : "",
+          "type" : "APPEND",
+          "top" : 112,
+          "left" : 1932
+        },
+        "LOAD_DATASET12" : {
+          "label" : "Instance Carbon Per CPU Reference",
+          "type" : "LOAD_DATASET",
+          "top" : 392,
+          "left" : 1792,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "LOAD_DATASET13" : {
+          "label" : "Organization",
+          "type" : "LOAD_DATASET",
+          "top" : 252,
+          "left" : 1652,
+          "parameters" : {
+            "sampleSize" : 2000
+          }
+        },
+        "JOIN4" : {
+          "label" : "JoinOrgCarbon",
+          "description" : "Adds weighted carbon per mms CPU data to org table.",
+          "type" : "JOIN",
+          "top" : 252,
+          "left" : 1932
+        },
+        "JOIN5" : {
+          "label" : "JoinEventsOrg",
+          "description" : "Adds the Organization data to the event data in order to calculate carbon emissions.",
+          "type" : "JOIN",
+          "top" : 112,
+          "left" : 2072
+        },
+        "TRANSFORM9_copy0" : {
+          "label" : "CleanUp2",
+          "description" : "Changes aggregated column properties.",
+          "type" : "TRANSFORM",
+          "top" : 112,
+          "left" : 2772,
+          "graph" : {
+            "EDIT_ATTRIBUTES1_copy0" : {
+              "label" : "Edit Attributes"
+            },
+            "EDIT_ATTRIBUTES2_copy0" : {
+              "label" : "Edit Attributes"
+            },
+            "EDIT_ATTRIBUTES5" : {
+              "label" : "Edit Attributes"
+            }
+          },
+          "connectors" : [
+            {
+              "source" : "EDIT_ATTRIBUTES1_copy0",
+              "target" : "EDIT_ATTRIBUTES2_copy0"
+            },
+            {
+              "source" : "EDIT_ATTRIBUTES2_copy0",
+              "target" : "EDIT_ATTRIBUTES5"
+            }
+          ]
+        },
+        "TRANSFORM10" : {
+          "label" : "DropColumns",
+          "description" : "",
+          "type" : "TRANSFORM",
+          "top" : 392,
+          "left" : 2632,
+          "graph" : {
+            "DROP_FIELDS7" : {
+              "label" : "Drop Columns"
+            }
+          },
+          "connectors" : [ ]
+        },
+        "TRANSFORM11" : {
+          "label" : "TransformApex",
+          "description" : "",
+          "type" : "TRANSFORM",
+          "top" : 112,
+          "left" : 252,
+          "graph" : {
+            "FORMULA14" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "UsageType"
+            }
+          },
+          "connectors" : [ ]
+        },
+        "TRANSFORM12" : {
+          "label" : "TransformTriggers",
+          "description" : "",
+          "type" : "TRANSFORM",
+          "top" : 252,
+          "left" : 392,
+          "graph" : {
+            "FORMULA16" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "UsageType"
+            }
+          },
+          "connectors" : [ ]
+        },
+        "TRANSFORM13" : {
+          "label" : "TransformURI",
+          "description" : "",
+          "type" : "TRANSFORM",
+          "top" : 392,
+          "left" : 1652,
+          "graph" : {
+            "FORMULA21" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "Formula"
+            }
+          },
+          "connectors" : [ ]
+        },
+        "TRANSFORM14" : {
+          "label" : "TransformVisualforce",
+          "description" : "",
+          "type" : "TRANSFORM",
+          "top" : 532,
+          "left" : 1792,
+          "graph" : {
+            "FORMULA22" : {
+              "parameters" : {
+                "type" : "BASE_FORMULA_UI"
+              },
+              "label" : "UsageType"
+            }
+          },
+          "connectors" : [ ]
+        },
+        "TRANSFORM15" : {
+          "label" : "TransformOrgInfo",
+          "description" : "",
+          "type" : "TRANSFORM",
+          "top" : 252,
+          "left" : 1792,
+          "graph" : {
+            "TRIM0" : {
+              "parameters" : {
+                "type" : "TRIM_UI"
+              },
+              "label" : "TrimOrgId"
+            }
+          },
+          "connectors" : [ ]
+        },
+        "FILTER1" : {
+          "label" : "FilterOutSampleData",
+          "description" : "Thi is to filter out any sample data left by the Event Monitoring Analytics templated app.",
+          "type" : "FILTER",
+          "top" : 112,
+          "left" : 2212
+        },
+        "OUTPUT2" : {
+          "label" : "OutputOrgInfo",
+          "description" : "General information about the org and carbon coefficient.",
+          "type" : "OUTPUT",
+          "top" : 392,
+          "left" : 2072
+        },
+        "AGGREGATE4_copy0" : {
+          "label" : "SecondaryAggregate",
+          "description" : "Groups by epoch; default is year-week",
+          "type" : "AGGREGATE",
+          "top" : 252,
+          "left" : 2632,
+          "graph" : {
+            "EXTRACT2_copy0" : null,
+            "AGGREGATE5_copy0" : null
+          },
+          "connectors" : [
+            {
+              "source" : "EXTRACT2_copy0",
+              "target" : "AGGREGATE5_copy0"
+            }
+          ]
+        },
+        "OUTPUT3" : {
+          "label" : "OutputAggregatedEmissions2",
+          "description" : "Includes aggregate by epoch",
+          "type" : "OUTPUT",
+          "top" : 252,
+          "left" : 2912
+        },
+        "TRANSFORM9_copy0_copy0" : {
+          "label" : "CleanUp3",
+          "description" : "Changes aggregated column properties.",
+          "type" : "TRANSFORM",
+          "top" : 252,
+          "left" : 2772,
+          "graph" : {
+            "EDIT_ATTRIBUTES1_copy0_copy0" : {
+              "label" : "Edit Attributes"
+            },
+            "EDIT_ATTRIBUTES2_copy0_copy0" : {
+              "label" : "Edit Attributes"
+            },
+            "EDIT_ATTRIBUTES5_copy0" : {
+              "label" : "Edit Attributes"
+            }
+          },
+          "connectors" : [
+            {
+              "source" : "EDIT_ATTRIBUTES1_copy0_copy0",
+              "target" : "EDIT_ATTRIBUTES2_copy0_copy0"
+            },
+            {
+              "source" : "EDIT_ATTRIBUTES2_copy0_copy0",
+              "target" : "EDIT_ATTRIBUTES5_copy0"
+            }
+          ]
+        },
+        "FILTER2" : {
+          "label" : "FilterAPILogs",
+          "description" : "A dataset that contains all of the API logs grouped together.\nThe better way to do this is to create Summary, Usage Type and Source columns in the source Event Monitoring datasets.",
+          "type" : "FILTER",
+          "top" : 391.9,
+          "left" : 2492
+        }
+      },
+      "connectors" : [
+        {
+          "source" : "LOAD_DATASET10",
+          "target" : "TRANSFORM0"
+        },
+        {
+          "source" : "LOAD_DATASET8",
+          "target" : "TRANSFORM1"
+        },
+        {
+          "source" : "LOAD_DATASET7",
+          "target" : "TRANSFORM2"
+        },
+        {
+          "source" : "TRANSFORM11",
+          "target" : "FILTER0"
+        },
+        {
+          "source" : "LOAD_DATASET4",
+          "target" : "TRANSFORM3"
+        },
+        {
+          "source" : "LOAD_DATASET3",
+          "target" : "TRANSFORM4"
+        },
+        {
+          "source" : "LOAD_DATASET5",
+          "target" : "AGGREGATE0"
+        },
+        {
+          "source" : "TRANSFORM12",
+          "target" : "JOIN0"
+        },
+        {
+          "source" : "AGGREGATE0",
+          "target" : "JOIN0"
+        },
+        {
+          "source" : "TRANSFORM2",
+          "target" : "JOIN1"
+        },
+        {
+          "source" : "AGGREGATE0",
+          "target" : "JOIN1"
+        },
+        {
+          "source" : "TRANSFORM1",
+          "target" : "JOIN2"
+        },
+        {
+          "source" : "AGGREGATE0",
+          "target" : "JOIN2"
+        },
+        {
+          "source" : "FILTER0",
+          "target" : "JOIN3"
+        },
+        {
+          "source" : "AGGREGATE0",
+          "target" : "JOIN3"
+        },
+        {
+          "source" : "APPEND8",
+          "target" : "APPEND0"
+        },
+        {
+          "source" : "TRANSFORM0",
+          "target" : "APPEND0"
+        },
+        {
+          "source" : "JOIN2",
+          "target" : "APPEND1"
+        },
+        {
+          "source" : "APPEND0",
+          "target" : "APPEND1"
+        },
+        {
+          "source" : "APPEND1",
+          "target" : "APPEND2"
+        },
+        {
+          "source" : "JOIN1",
+          "target" : "APPEND2"
+        },
+        {
+          "source" : "APPEND2",
+          "target" : "APPEND3"
+        },
+        {
+          "source" : "TRANSFORM3",
+          "target" : "APPEND3"
+        },
+        {
+          "source" : "APPEND3",
+          "target" : "APPEND4"
+        },
+        {
+          "source" : "TRANSFORM4",
+          "target" : "APPEND4"
+        },
+        {
+          "source" : "APPEND4",
+          "target" : "APPEND5"
+        },
+        {
+          "source" : "TRANSFORM5",
+          "target" : "APPEND5"
+        },
+        {
+          "source" : "APPEND5",
+          "target" : "APPEND6"
+        },
+        {
+          "source" : "TRANSFORM6",
+          "target" : "APPEND6"
+        },
+        {
+          "source" : "LOAD_DATASET2",
+          "target" : "TRANSFORM5"
+        },
+        {
+          "source" : "LOAD_DATASET1",
+          "target" : "TRANSFORM6"
+        },
+        {
+          "source" : "APPEND6",
+          "target" : "APPEND7"
+        },
+        {
+          "source" : "TRANSFORM13",
+          "target" : "APPEND7"
+        },
+        {
+          "source" : "JOIN3",
+          "target" : "APPEND8"
+        },
+        {
+          "source" : "JOIN0",
+          "target" : "APPEND8"
+        },
+        {
+          "source" : "APPEND7",
+          "target" : "APPEND9"
+        },
+        {
+          "source" : "TRANSFORM14",
+          "target" : "APPEND9"
+        },
+        {
+          "source" : "TRANSFORM15",
+          "target" : "JOIN4"
+        },
+        {
+          "source" : "LOAD_DATASET12",
+          "target" : "JOIN4"
+        },
+        {
+          "source" : "APPEND9",
+          "target" : "JOIN5"
+        },
+        {
+          "source" : "JOIN4",
+          "target" : "JOIN5"
+        },
+        {
+          "source" : "TRANSFORM8",
+          "target" : "TRANSFORM9"
+        },
+        {
+          "source" : "TRANSFORM9",
+          "target" : "AGGREGATE4"
+        },
+        {
+          "source" : "AGGREGATE4",
+          "target" : "TRANSFORM9_copy0"
+        },
+        {
+          "source" : "TRANSFORM10",
+          "target" : "OUTPUT0"
+        },
+        {
+          "source" : "TRANSFORM9_copy0",
+          "target" : "OUTPUT1"
+        },
+        {
+          "source" : "FILTER2",
+          "target" : "TRANSFORM10"
+        },
+        {
+          "source" : "LOAD_DATASET9",
+          "target" : "TRANSFORM11"
+        },
+        {
+          "source" : "LOAD_DATASET6",
+          "target" : "TRANSFORM12"
+        },
+        {
+          "source" : "LOAD_DATASET0",
+          "target" : "TRANSFORM13"
+        },
+        {
+          "source" : "LOAD_DATASET11",
+          "target" : "TRANSFORM14"
+        },
+        {
+          "source" : "LOAD_DATASET13",
+          "target" : "TRANSFORM15"
+        },
+        {
+          "source" : "FILTER1",
+          "target" : "TRANSFORM8"
+        },
+        {
+          "source" : "JOIN5",
+          "target" : "FILTER1"
+        },
+        {
+          "source" : "JOIN4",
+          "target" : "OUTPUT2"
+        },
+        {
+          "source" : "TRANSFORM9",
+          "target" : "AGGREGATE4_copy0"
+        },
+        {
+          "source" : "AGGREGATE4_copy0",
+          "target" : "TRANSFORM9_copy0_copy0"
+        },
+        {
+          "source" : "TRANSFORM9_copy0_copy0",
+          "target" : "OUTPUT3"
+        },
+        {
+          "source" : "TRANSFORM9",
+          "target" : "FILTER2"
+        }
+      ],
+      "hiddenColumns" : [ ]
+    },
+    "runMode" : "full"
+  },
+  "lastTime" : null
+}

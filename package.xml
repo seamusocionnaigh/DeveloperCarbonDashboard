@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>DeveloperCarbonDashboard</members>
+        <name>WaveApplication</name>
+    </types>
+    <types>
+        <members>Carbon_Emissions</members>
+        <name>WaveDashboard</name>
+    </types>
+    <types>
+        <members>CarbonEmissionsApex</members>
+        <members>Carbon_Emissions</members>
+        <name>WaveDataflow</name>
+    </types>
+    <types>
+        <members>AggregatedCarbonEmissions</members>
+        <members>ApexExecutionsWithExceptions</members>
+        <members>CarbonEmissions</members>
+        <members>CarbonEmissionsByTime</members>
+        <members>Instance_Carbon_Per_CPU_Reference</members>
+        <members>OrgInfo</members>
+        <name>WaveDataset</name>
+    </types>
+    <types>
+        <members>CarbonEmissionsApex</members>
+        <members>Carbon_Emissions</members>
+        <name>WaveRecipe</name>
+    </types>
+    <types>
+        <members>Carbon_Emissions</members>
+        <members>OrgInfo</members>
+        <name>WaveXmd</name>
+    </types>
+    <version>58.0</version>
+</Package>

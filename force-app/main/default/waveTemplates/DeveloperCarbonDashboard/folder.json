@@ -1,0 +1,10 @@
+{
+  "name" : "DeveloperCarbonDashboard",
+  "label" : "Developer Carbon Dashboard",
+  "shares" : [
+    {
+      "accessType" : "Edit",
+      "shareType" : "Organization"
+    }
+  ]
+}

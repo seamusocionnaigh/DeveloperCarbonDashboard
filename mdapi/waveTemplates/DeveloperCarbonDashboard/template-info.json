@@ -1,0 +1,156 @@
+{
+  "templateType" : "app",
+  "label" : "Developer Carbon Dashboard",
+  "name" : "DeveloperCarbonDashboard",
+  "description" : "",
+  "assetVersion" : 58.0,
+  "variableDefinition" : "variables.json",
+  "uiDefinition" : "ui.json",
+  "rules" : [
+    {
+      "type" : "templateToApp",
+      "file" : "template-to-app-rules.json"
+    },
+    {
+      "type" : "appToTemplate",
+      "file" : "app-to-template-rules.json"
+    }
+  ],
+  "releaseInfo" : {
+    "templateVersion" : "1.0",
+    "notesFile" : "releaseNotes.html"
+  },
+  "folderDefinition" : "folder.json",
+  "externalFiles" : [
+    {
+      "label" : "Instance Carbon Per CPU Reference",
+      "name" : "Instance_Carbon_Per_CPU_Reference",
+      "condition" : "${Variables.Overrides.createAllExternalFiles}",
+      "file" : "external_files/Instance_Carbon_Per_CPU_Reference.csv",
+      "type" : "CSV",
+      "schema" : "external_files/Instance_Carbon_Per_CPU_Reference.json",
+      "userXmd" : "external_files/Instance_Carbon_Per_CPU_Reference_XMD.json",
+      "rows" : 5
+    }
+  ],
+  "lenses" : [ ],
+  "dashboards" : [
+    {
+      "label" : "Carbon Emissions",
+      "name" : "Carbon_Emissions_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Carbon_Emissions.json"
+    }
+  ],
+  "components" : [ ],
+  "dataTransforms" : [ ],
+  "eltDataflows" : [ ],
+  "recipes" : [
+    {
+      "label" : "Carbon Emissions Apex",
+      "name" : "CarbonEmissionsApex",
+      "condition" : "${Variables.Overrides.createAllRecipes}",
+      "file" : "recipes/CarbonEmissionsApex.json",
+      "executeCondition" : "CreateSyncExecute"
+    },
+    {
+      "label" : "Carbon Emissions",
+      "name" : "Carbon_Emissions",
+      "condition" : "${Variables.Overrides.createAllRecipes}",
+      "file" : "recipes/Carbon_Emissions.json",
+      "executeCondition" : "CreateSyncExecute"
+    }
+  ],
+  "datasetFiles" : [
+    {
+      "label" : "Aggregated Carbon Emissions",
+      "name" : "AggregatedCarbonEmissions_tp",
+      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
+      "userXmd" : "dataset_files/AggregatedCarbonEmissions_XMD.json"
+    },
+    {
+      "label" : "ApexExecutionsWithExceptions",
+      "name" : "ApexExecutionsWithExceptions_tp",
+      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
+      "userXmd" : "dataset_files/ApexExecutionsWithExceptions_XMD.json"
+    },
+    {
+      "label" : "Carbon Emissions",
+      "name" : "CarbonEmissions_tp",
+      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
+      "userXmd" : "dataset_files/CarbonEmissions_XMD.json"
+    },
+    {
+      "label" : "Carbon Emissions By Time",
+      "name" : "CarbonEmissionsByTime_tp",
+      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
+      "userXmd" : "dataset_files/CarbonEmissionsByTime_XMD.json"
+    },
+    {
+      "label" : "OrgInfo",
+      "name" : "OrgInfo_tp",
+      "condition" : "${Variables.Overrides.createAllDatasetFiles}",
+      "userXmd" : "dataset_files/OrgInfo_XMD.json"
+    }
+  ],
+  "storedQueries" : [ ],
+  "imageFiles" : [
+    {
+      "name" : "Landing_left2png",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/Landing_left2.png"
+    },
+    {
+      "name" : "Landing_left1png",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/Landing_left1.png"
+    },
+    {
+      "name" : "Landing_right1png",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/Landing_right1.png"
+    },
+    {
+      "name" : "Landing_right2png",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/Landing_right2.png"
+    },
+    {
+      "name" : "LandingTreeLeft1png",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/LandingTreeLeft1.png"
+    },
+    {
+      "name" : "LandingTreeRight1png",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/LandingTreeRight1.png"
+    },
+    {
+      "name" : "Tree4png",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/Tree4.png"
+    },
+    {
+      "name" : "Trees9png",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/Trees9.png"
+    }
+  ],
+  "extendedTypes" : { },
+  "templateDependencies" : [
+    {
+      "namespace" : "sfdc_internal",
+      "name" : "AdminAnalytics",
+      "templateVersion" : ">=58.0"
+    }
+  ],
+  "icons" : {
+    "appBadge" : {
+      "name" : "16.png"
+    },
+    "templateBadge" : {
+      "name" : "default.png"
+    },
+    "templatePreviews" : [ ]
+  }
+}

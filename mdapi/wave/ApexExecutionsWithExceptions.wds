@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveDataset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <application>DeveloperCarbonDashboard</application>
+    <description>Created from the CarbonEmissionsApex recipe.</description>
+    <masterLabel>ApexExecutionsWithExceptions</masterLabel>
+    <templateAssetSourceName>ApexExecutionsWithExceptions_tp</templateAssetSourceName>
+    <type>default</type>
+</WaveDataset>
