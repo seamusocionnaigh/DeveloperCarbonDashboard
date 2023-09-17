@@ -56,6 +56,6 @@ There are two options:
     * Edit image placeholder
     * Upload all .png files in misc folder
 
-### Solution Overview
+## Solution Overview
 
 ![Developer Carbon Dashboard ERD](https://github.com/seamusocionnaigh/DeveloperCarbonDashboard/assets/20658634/f0228f16-bda5-4113-a5e1-99051d5be7cb)
