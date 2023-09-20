@@ -1,7 +1,7 @@
 # The Salesforce Developer Carbon Dashboard
 
 This dashboard uses Event Monitoring and CRM Analytics to illustrate the estimated carbon emissions associated with an org’s usage of Salesforce App Server CPU time via specific features and products. The dashboard does not calculate the entire carbon emissions footprint of an org. The carbon emission coefficient for a given instance is subject to change based on several factors including the carbon intensity of the electrical grid the instance relies on and the App Server SKUs serving that instance.
-Information in this dashboard on carbon emissions is intended for informational purposes and should not be used in regulatory or financial statements. Salesforce is a Net Zero Company that seeks to reduce carbon emissions and, when needed, purchases carbon offsets. Learn more about Salesforce’s commitment to Sustainability [here](https://www.salesforce.com/company/sustainability/)
+Information in this dashboard on carbon emissions is intended for informational purposes and should not be used in regulatory or financial statements. Salesforce maintains [net zero residual emissions](https://www.salesforce.com/company/sustainability/faq/), seeking to reduce emissions in line with a [1.5°C future](https://news.mit.edu/2023/explained-climate-benchmark-rising-temperatures-0827) while compensating for remaining emissions by procuring high-quality renewable energy and carbon credits. Learn more about Salesforce’s commitment to sustainability [here](https://www.salesforce.com/company/sustainability/).
 
 
 ![image](https://github.com/seamusocionnaigh/DeveloperCarbonDashboard/assets/20658634/cd93735b-3c01-4eb3-ac6b-6265f4837e2d)
